@@ -10,7 +10,7 @@ You’ll compare:
 - multi-stage builds (esp. Java + Python wheels)
 - security hardening (non-root)
 - `.dockerignore`, HEALTHCHECK
-- optional distroless (later)
+- optional distroless 
 
 ## Quick start (local)
 ### Build everything
