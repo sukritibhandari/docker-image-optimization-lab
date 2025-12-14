@@ -29,13 +29,13 @@ jobs:
             port: 3000
             health_path: /health
 
-          # - name: node-alpine-cache
-          #   context: apps/node-api
-          #   dockerfile: dockerfiles/node/Dockerfile.alpine-cache
-          #   tag: lab-node:alpine-cache
-          #   container_name: ci-node-alpine-cache
-          #   port: 3000
-          #   health_path: /health
+          - name: node-alpine-cache
+            context: apps/node-api
+            dockerfile: dockerfiles/node/Dockerfile.alpine-cache
+            tag: lab-node:alpine-cache
+            container_name: ci-node-alpine-cache
+            port: 3000
+            health_path: /health
 
     steps:
       - name: Checkout
