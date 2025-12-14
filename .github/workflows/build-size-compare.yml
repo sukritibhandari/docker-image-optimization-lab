@@ -37,6 +37,15 @@ jobs:
             port: 3000
             health_path: /health
 
+          - name: node-secure
+            context: apps/node-api
+            dockerfile: dockerfiles/node/Dockerfile.secure
+            tag: lab-node:secure
+            container_name: ci-node-secure
+            port: 3000
+            health_path: /health
+
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
