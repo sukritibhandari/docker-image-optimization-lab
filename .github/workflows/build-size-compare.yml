@@ -105,6 +105,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: sizes
+          pattern: size-*
+          merge-multiple: true
 
       - name: Create Markdown size report
         run: |
