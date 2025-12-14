@@ -21,14 +21,13 @@ jobs:
             port: 3000
             health_path: /health
 
-          # Example: enable later
-          # - name: node-slim-cache
-          #   context: apps/node-api
-          #   dockerfile: dockerfiles/node/Dockerfile.slim-cache
-          #   tag: lab-node:slim-cache
-          #   container_name: ci-node-slim-cache
-          #   port: 3000
-          #   health_path: /health
+          - name: node-slim-cache
+            context: apps/node-api
+            dockerfile: dockerfiles/node/Dockerfile.slim-cache
+            tag: lab-node:slim-cache
+            container_name: ci-node-slim-cache
+            port: 3000
+            health_path: /health
 
           # - name: node-alpine-cache
           #   context: apps/node-api
