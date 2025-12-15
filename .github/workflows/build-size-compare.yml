@@ -53,6 +53,14 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: python-slim-cache
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.slim-cache
+            tag: lab-python:slim-cache
+            container_name: ci-python-slim-cache
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
