@@ -45,6 +45,14 @@ jobs:
             port: 3000
             health_path: /health
 
+          - name: python-naive
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.naive
+            tag: lab-python:naive
+            container_name: ci-python-naive
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
