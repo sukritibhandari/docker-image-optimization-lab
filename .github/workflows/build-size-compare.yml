@@ -85,6 +85,14 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: python-secure
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.secure
+            tag: lab-python:secure
+            container_name: ci-python-secure
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
