@@ -77,6 +77,14 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: python-wheels-multistage
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.wheels-multistage
+            tag: lab-python:wheels-multistage
+            container_name: ci-python-wheels-multistage
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
