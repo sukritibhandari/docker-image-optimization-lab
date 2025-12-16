@@ -101,6 +101,14 @@ jobs:
             port: 8080
             health_path: /actuator/health
 
+          - name: java-slim-cache
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.slim-cache
+            tag: lab-java:slim-cache
+            container_name: ci-java-slim-cache
+            port: 8080
+            health_path: /actuator/health
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
