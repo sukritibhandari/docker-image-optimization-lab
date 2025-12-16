@@ -63,17 +63,17 @@ jobs:
 
           - name: python-alpine-multirun
             context: apps/python-api
-            dockerfile: dockerfiles/python/Dockerfile.alpine-multirun
-            tag: lab-python:alpine-multirun
-            container_name: ci-python-alpine-multirun
+            dockerfile: dockerfiles/python/Dockerfile.alpine-broken-multirun
+            tag: lab-python:alpine-broken-multirun
+            container_name: ci-python-alpine-broken-multirun
             port: 8000
             health_path: /health
 
           - name: python-alpine-singlerun
             context: apps/python-api
-            dockerfile: dockerfiles/python/Dockerfile.alpine-singlerun
-            tag: lab-python:alpine-singlerun
-            container_name: ci-python-alpine-singlerun
+            dockerfile: dockerfiles/python/Dockerfile.alpine-correct-singlerun
+            tag: lab-python:alpine-correct-singlerun
+            container_name: ci-python-alpine-correct-singlerun
             port: 8000
             health_path: /health
 
