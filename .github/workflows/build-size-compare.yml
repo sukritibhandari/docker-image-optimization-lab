@@ -93,6 +93,13 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: java-naive
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.naive
+            tag: lab-java:naive
+            container_name: ci-java-naive
+            port: 8080
+            health_path: /actuator/health
 
     steps:
       - name: Checkout
