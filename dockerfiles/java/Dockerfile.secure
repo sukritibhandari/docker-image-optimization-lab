@@ -1,0 +1,13 @@
+FROM maven:3.9.5-jdk-17-slim
+
+WORKDIR /app
+
+COPY pom.xml ./
+
+RUN mvn clean package -DskipTests
+
+COPY src ./src
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "target/myapp.jar"]
