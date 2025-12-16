@@ -45,6 +45,54 @@ jobs:
             port: 3000
             health_path: /health
 
+          - name: python-naive
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.naive
+            tag: lab-python:naive
+            container_name: ci-python-naive
+            port: 8000
+            health_path: /health
+
+          - name: python-slim-cache
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.slim-cache
+            tag: lab-python:slim-cache
+            container_name: ci-python-slim-cache
+            port: 8000
+            health_path: /health
+
+          - name: python-alpine-multirun
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.alpine-broken-multirun
+            tag: lab-python:alpine-broken-multirun
+            container_name: ci-python-alpine-broken-multirun
+            port: 8000
+            health_path: /health
+
+          - name: python-alpine-singlerun
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.alpine-correct-singlerun
+            tag: lab-python:alpine-correct-singlerun
+            container_name: ci-python-alpine-correct-singlerun
+            port: 8000
+            health_path: /health
+
+          - name: python-wheels-multistage
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.wheels-multistage
+            tag: lab-python:wheels-multistage
+            container_name: ci-python-wheels-multistage
+            port: 8000
+            health_path: /health
+
+          - name: python-secure
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.secure
+            tag: lab-python:secure
+            container_name: ci-python-secure
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
