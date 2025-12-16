@@ -61,6 +61,22 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: python-alpine-multirun
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.alpine-multirun
+            tag: lab-python:alpine-multirun
+            container_name: ci-python-alpine-multirun
+            port: 8000
+            health_path: /health
+
+          - name: python-alpine-singlerun
+            context: apps/python-api
+            dockerfile: dockerfiles/python/Dockerfile.alpine-singlerun
+            tag: lab-python:alpine-singlerun
+            container_name: ci-python-alpine-singlerun
+            port: 8000
+            health_path: /health
+
 
     steps:
       - name: Checkout
