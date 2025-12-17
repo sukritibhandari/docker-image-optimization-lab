@@ -1,42 +1,25 @@
 # =========================
-# Node.js
+# Git
 # =========================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.git
+.gitignore
 
 # =========================
-# Python
-# =========================
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.venv/
-venv/
-env/
-.env
-.env.*
-
-# =========================
-# Java / Maven
+# Maven / Java build artifacts
 # =========================
 target/
 *.class
 *.jar
 *.war
 *.ear
-.mvn/wrapper/maven-wrapper.jar
 
 # =========================
-# Docker
+# Maven local repo (never copy)
 # =========================
-*.log
-docker-compose.override.yml
+.m2/
 
 # =========================
-# OS / Editor
+# OS / Editor noise
 # =========================
 .DS_Store
 .idea/
@@ -44,7 +27,13 @@ docker-compose.override.yml
 *.swp
 
 # =========================
-# CI / Build Artifacts
+# Logs / temp
 # =========================
-sizes/
-artifacts/
+*.log
+logs/
+
+# =========================
+# Docker
+# =========================
+docker-compose.yml
+docker-compose.override.yml
