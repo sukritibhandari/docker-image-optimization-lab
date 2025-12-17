@@ -117,6 +117,14 @@ jobs:
             port: 8080
             health_path: /actuator/health
 
+          - name: java-secure
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.secure
+            tag: lab-java:secure
+            container_name: ci-java-secure
+            port: 8080
+            health_path: /actuator/health
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
