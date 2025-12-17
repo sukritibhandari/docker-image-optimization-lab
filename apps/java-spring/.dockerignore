@@ -1,0 +1,39 @@
+# =========================
+# Git
+# =========================
+.git
+.gitignore
+
+# =========================
+# Maven / Java build artifacts
+# =========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Maven local repo (never copy)
+# =========================
+.m2/
+
+# =========================
+# OS / Editor noise
+# =========================
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+logs/
+
+# =========================
+# Docker
+# =========================
+docker-compose.yml
+docker-compose.override.yml
