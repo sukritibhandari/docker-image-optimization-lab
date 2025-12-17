@@ -101,11 +101,19 @@ jobs:
             port: 8080
             health_path: /actuator/health
 
-          - name: java-slim-cache
+          - name: java-multistage-jre17
             context: apps/java-spring
-            dockerfile: dockerfiles/java/Dockerfile.slim-cache
-            tag: lab-java:slim-cache
-            container_name: ci-java-slim-cache
+            dockerfile: dockerfiles/java/Dockerfile.multistage-jre17
+            tag: lab-java:multistage-jre17
+            container_name: ci-java-multistage-jre17
+            port: 8080
+            health_path: /actuator/health
+
+          - name: java-multistage-jre17-alpine
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.multistage-jre17-alpine
+            tag: lab-java:multistage-jre17-alpine
+            container_name: ci-java-multistage-jre17-alpine
             port: 8080
             health_path: /actuator/health
 
