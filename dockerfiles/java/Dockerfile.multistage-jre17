@@ -18,15 +18,6 @@ WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
 
-RUN useradd -m -u 10001 appuser \
-    && mkdir -p /app/logs \
-    && chown -R appuser:appuser /app
-
-USER appuser
-
 EXPOSE 8080
-
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD java -cp /app/app.jar org.springframework.boot.actuate.health.HealthEndpoint || exit 1
 
 CMD ["java", "-jar", "app.jar"]

@@ -93,6 +93,37 @@ jobs:
             port: 8000
             health_path: /health
 
+          - name: java-naive
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.naive
+            tag: lab-java:naive
+            container_name: ci-java-naive
+            port: 8080
+            health_path: /actuator/health
+
+          - name: java-multistage-jre17
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.multistage-jre17
+            tag: lab-java:multistage-jre17
+            container_name: ci-java-multistage-jre17
+            port: 8080
+            health_path: /actuator/health
+
+          - name: java-multistage-jre17-alpine
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.multistage-jre17-alpine
+            tag: lab-java:multistage-jre17-alpine
+            container_name: ci-java-multistage-jre17-alpine
+            port: 8080
+            health_path: /actuator/health
+
+          - name: java-secure
+            context: apps/java-spring
+            dockerfile: dockerfiles/java/Dockerfile.secure
+            tag: lab-java:secure
+            container_name: ci-java-secure
+            port: 8080
+            health_path: /actuator/health
 
     steps:
       - name: Checkout
